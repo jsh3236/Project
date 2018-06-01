@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko-kr">
 <head>
@@ -33,9 +34,14 @@
   border-bottom: 1px solid #ccc;
  }
  
+input.ng-not-empty
+{ /* 에러 출력시 필드 외곽선(적색) 표시  */
+   border: 2px solid red;
+}
+
 input.ng-invalid 
 { /* 에러 출력시 필드 외곽선(적색) 표시  */
-   border: 5px solid red;
+   border: 1px solid #ccc;
 }
 
 /* 에러 메시지 출력 팝업 */
@@ -52,33 +58,33 @@ input.ng-invalid
 
 
 <!-- jQuery UI CSS : 캘린더(datePicker) -->	  	  
-<link rel="stylesheet" href="./js/jQuery/ui/1.12.1/jquery-ui.min.css">
+<link rel="stylesheet" href="<c:url value='/jQuery/ui/1.12.1/jquery-ui.min.css' />">
 
 <!-- 주소검색 : daum -->
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
 <!-- jQuery -->
-<script src="./js/jQuery/3.3.1/jquery-3.3.1.min.js"></script>
+<script src="<c:url value='/jQuery/3.3.1/jquery-3.3.1.min.js' />"></script>
 
 <!-- jQuery UI -->
-<script src="./js/jQuery/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="<c:url value='/jQuery/ui/1.12.1/jquery-ui.min.js' />"></script>
 
 <!-- jQuery UI : 캘린더(datePicker) 설정(한글 지원) -->	
-<script src="./js/custom/datepicker.ko.js"></script>
+<script src="<c:url value='/custom/datepicker.ko.js' />"></script>
 
 <!-- 폼 점검(form validation) -->
-<script src="./js/custom/memberJoinAngularValidator.js"></script>
+<script src="<c:url value='/custom/memberJoinAngularValidator.js' />"></script>
 
 <!-- AngularJS lib -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script> -->
-<script src="./js/angularjs/1.6.10/angular.min.js"></script>
+<script src="<c:url value='/angularjs/1.6.10/angular.min.js' />"></script>
 
 
 <!-- AngularJS -->
 <script>
-var app = angular.module('memberJoinBody', []);
+var app = angular.module('joinBody', []);
 
-	app.controller('memberJoinAngularController', 
+	app.controller('joinAngularController', 
 			       ['$scope', function ($scope) {
 				
 	    // TODO
