@@ -33,8 +33,6 @@ public class mainController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		//ffffasdsdasdas
-		
 		return "home.jsp";
 	}
 	
