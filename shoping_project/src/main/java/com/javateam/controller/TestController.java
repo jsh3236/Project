@@ -1,4 +1,4 @@
-package com.javateam.secureApp1;
+package com.javateam.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
