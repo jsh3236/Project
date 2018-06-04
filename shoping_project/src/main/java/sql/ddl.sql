@@ -27,3 +27,15 @@ VALUES ('admin','$2a$10$US3HfE49gc5k.2nDwr/a9u1uCg6O8olzJZc5yERG.obR7xveqIHE2', 
 
 INSERT INTO user_roles (user_role_id, username, role)
 VALUES (user_roles_seq.nextval, 'admin', 'ROLE_ADMIN');
+
+CREATE  TABLE users (
+  username VARCHAR(45) NOT NULL primary key,
+  password VARCHAR(60) NOT NULL,
+  enabled number(1) DEFAULT 1,
+  name varchar(20) not null,
+  sex varchar(5) not null,
+  phone varchar(20) not null,
+  address varchar(200) not null,
+  email varchar(100) not null
+  date sysdate()
+ );
