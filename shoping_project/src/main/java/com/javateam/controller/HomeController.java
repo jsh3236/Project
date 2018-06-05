@@ -1,5 +1,7 @@
 package com.javateam.controller;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -23,9 +25,23 @@ public class HomeController {
 	public void join() {
 	}
 	
+	@RequestMapping("/myPage")
+	public void myPage() {
+	}
+	
 	@RequestMapping("/joinAction")
 	public void join(@RequestParam("username") String username,
-					 @RequestParam("password") String password) {
+					 @RequestParam("pw") String password,
+					 @RequestParam("name") String name,
+					 @RequestParam("gender") String sex,
+					 @RequestParam("phone") String phone,
+					 @RequestParam("phone2") String phone2,
+					 @RequestParam("phone3") String phone3,
+					 @RequestParam("postcode") String postcode,
+					 @RequestParam("address") String address,
+					 @RequestParam("address2") String address2,
+					 @RequestParam("email") String email,
+					 @RequestParam("email2") String email2) {
 		
 		System.out.println("join !");
 		
@@ -36,9 +52,18 @@ public class HomeController {
 
 		System.out.println(hashedPassword);
 		
+		email = email + email2;
+		address = postcode+ ", " + address+ ", " + address2;
+		phone = phone+"-"+phone2+"-"+phone3;
 		Users users = new Users(username,
 								hashedPassword,
-								1);
+								1,
+								name,
+								sex,
+								phone,
+								address,
+								email,
+								new Date(System.currentTimeMillis()));
 		authJdbcService.insertUsers(users, "ROLE_USER");
 	} // 
 	

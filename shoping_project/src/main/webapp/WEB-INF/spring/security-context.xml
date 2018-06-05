@@ -9,8 +9,8 @@
          class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
          <beans:property name="driverClass" value="oracle.jdbc.OracleDriver" />
          <beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
-         <beans:property name="username" value="oraclejava" />
-         <beans:property name="password" value="oraclejava" />
+         <beans:property name="username" value="s_prj" />
+         <beans:property name="password" value="1234" />
     </beans:bean>
 	
     <http auto-config="true" 

@@ -38,7 +38,7 @@ table.type03 td {
 }
 
 /* 에러 출력시.값이 있을 때 필드 외곽선(적색) 표시  */
-input.ng-invalid.ng-not-empty {
+input.ng-invalid { /*, input.ng-not-empty */
 	border: 2px solid red;
 }
 
@@ -92,10 +92,7 @@ font {
 	} ]);
 
 	
- 	$(function() {
- 		
- 		// 3번째 이메일 필드 숨기기
- 		$("#email3").hide();
+/* 	$(function() {
 		
 		// jQuery : 아이디 폼 점검과 중복 점검 메시지 충돌 방지을 위한 초기화
 		$("#id").focus(function() {
@@ -121,10 +118,10 @@ font {
 		
 		
 	});
-	 
- 	
+	 */
+	
 	// 도로명 주소 검색
- 	    function getPostcodeAddress() {
+/* 	    function getPostcodeAddress() {
 	        new daum.Postcode({
 	            oncomplete: function(data) {
 	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
@@ -173,7 +170,7 @@ font {
 	            }
 	        }).open();
 	    }
- 
+ */
 </script>
 
 </head>
@@ -183,7 +180,8 @@ font {
 	<form id="join" 
 		  name="join" 
 		  action="joinAction" 
-		  method="post">
+		  method="get"
+		  onsubmit="alert('1')">
 		  
 		<table class="type03" align="center">
 		
@@ -397,18 +395,16 @@ font {
 					<input type="text" 
 						   id="email" 
 						   name="email"
-						   size="15" 
+						   size=15 
 						   maxlength="20" 
 						   style="height: 20px"
-						   ng-required = "true" 
-						   ng-model = "email"/> 
+						   ng-required = "true" /> 
 						   
 					<font size=2 style="color: black;"> @ </font>
 					
 					<select name="email2"
 							id="email2"
-							style="height: 25px"
-							ng-model = "email2">
+							style="height: 25px">
 						<option value="naver.com">naver.com</option>
 						<option value="daum.net">daum.net</option>
 						<option value="hanmail.net">hanmail.net</option>
@@ -422,11 +418,12 @@ font {
 					<input type="text"  
 						   id="email3" 
 						   name="email3" 
-						   size="15"
+						   size=15 
 						   maxlength="20"
-					       style="height: 20px;"
+					       style="height: 20px; display:none;"
 					       ng-model="email3"
-                 	       ng-pattern="/^[A-Za-z0-9]+[.]+[a-zA-Z]+$/" /> <!-- style="height: 20px; display:none;" -->
+              			   ng-required = "true"
+                 	       ng-pattern="/^[A-Za-z0-9]+[.]+[a-zA-Z]+$/" /> 
                  	
                 	<br>
                 	<div id="email_msg" 
@@ -452,7 +449,7 @@ font {
 		<br><br>
 		<input type="submit" 
 					value="회원가입" 
-					style="margin-left: 350px" /> &nbsp;&nbsp; 
+					style="margin-left: 350px" onclick="alert('2')"/> &nbsp;&nbsp; 
 			
 		<input type="button" 
 				   value="취소"

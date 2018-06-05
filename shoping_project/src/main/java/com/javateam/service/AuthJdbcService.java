@@ -1,5 +1,7 @@
 package com.javateam.service;
 
+import java.util.Date;
+
 import javax.sql.DataSource;
 
 import org.slf4j.Logger;
@@ -10,7 +12,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.javateam.model.vo.Users;
-import com.sun.xml.internal.bind.v2.runtime.Location;
 /*
  * Spring JDBC를 사용 : javateacher
  */
@@ -54,13 +55,19 @@ public class AuthJdbcService {
     
     public void insertUsers(Users users, String role) {
     	
-    	String sql  = "INSERT INTO users VALUES (?,?,1)";
+    	String sql  = "INSERT INTO users VALUES (?,?,1,?,?,?,?,?,?)";
     	String sql2 = "INSERT INTO user_roles VALUES "
     				+ "(user_roles_seq.nextval,?,?)";
     	
     	this.jdbcTemplate.update(sql, 
     							 new Object[] { users.getUsername(), 
-											    users.getPassword() });
+											    users.getPassword(),
+											    users.getName(),
+											    users.getSex(),
+											    users.getPhone(),
+											    users.getAddress(),
+											    users.getEmail(),
+											    users.getJoindate()});
     	
     	this.jdbcTemplate.update(sql2, 
     							 new Object[] { users.getUsername(),

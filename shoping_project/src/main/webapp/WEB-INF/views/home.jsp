@@ -1,6 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html lang="ko-kr">
 <head>
 	<title>Home</title>
 	
@@ -39,12 +41,22 @@
 					<li><a href="#">Board</a></li>
 					<li><a href="#">Reference</a></li>
 					<li><a href="#">Contact</a></li>
-					<li><a style="padding-left: 100px;" href="${pageContext.request.contextPath}/login">login</a></li>
-					<li><a style="padding-right: 30px;" href="${pageContext.request.contextPath}/join">join in</a></li>
+					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+					<li><a href="${pageContext.request.contextPath}/login">login</a></li>
+					<li><a style="padding-right: 30px"href="${pageContext.request.contextPath}/join">join</a></li>
 				</ul>			
 			</nav>
 		</div>
 	</header>
 </h1>
+
+<table>
+	<tr>
+		<td colspan="3">키보드</td>
+		<td>
+	</tr>
+</table>
+
+
 </body>
 </html>
