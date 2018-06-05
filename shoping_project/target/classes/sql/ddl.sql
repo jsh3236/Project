@@ -44,6 +44,8 @@ CREATE  TABLE users (
  );
 
 
+// 테이블 컬럼 길이 설정
+
 column username format a10;
 column password format a30;
 column name format a5;
@@ -51,3 +53,8 @@ column sex format a3;
 column phone format a10;
 column address format a30;
 column email format a20;
+
+
+//테이블 보기 편하게
+set linesize 150
+set pagesize 150
