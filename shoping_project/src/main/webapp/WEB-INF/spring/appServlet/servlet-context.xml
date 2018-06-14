@@ -33,5 +33,6 @@
 	<context:component-scan base-package="com.javateam.controller" />
  	<context:component-scan base-package="com.javateam.service" />
 	<context:component-scan base-package="com.javateam.model.vo" />
+	<context:component-scan base-package="com.javateam.model.jpavo" />
 	
 </beans:beans>

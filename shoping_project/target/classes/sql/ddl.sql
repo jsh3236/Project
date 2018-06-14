@@ -58,3 +58,25 @@ column email format a20;
 //테이블 보기 편하게
 set linesize 150
 set pagesize 150
+
+
+
+
+CREATE TABLE BOARD_TBL (
+    BOARD_NUM INT, -- 글 번호 (oracle에서는 number 성분으로 자동 변환됨)
+    BOARD_NAME VARCHAR(30) NOT NULL, -- 작성자 (oracle에서는 varchar2 성분으로 자동 변환됨)
+    BOARD_PASS VARCHAR(15) NOT NULL, -- 비밀번호
+    BOARD_SUBJECT VARCHAR(50) NOT NULL, -- 제목
+    BOARD_CONTENT VARCHAR(2000) NOT NULL, -- 내용
+    BOARD_FILE VARCHAR(50) NOT NULL, -- 첨부 파일
+    BOARD_RE_REF INT NOT NULL, -- 관련글 번호
+    BOARD_RE_LEV INT NOT NULL, -- 답글 레벨
+    BOARD_RE_SEQ INT NOT NULL, -- 관련글 중 출력 순서
+    BOARD_READCOUNT INT DEFAULT 0, -- 조회수
+    BOARD_DATE DATE, -- 작성일
+    PRIMARY KEY(BOARD_NUM)
+);
+ 
+-- 보완
+ALTER TABLE board MODIFY board_num INT DEFAULT 0;
+ALTER TABLE board MODIFY BOARD_NAME VARCHAR(30);
