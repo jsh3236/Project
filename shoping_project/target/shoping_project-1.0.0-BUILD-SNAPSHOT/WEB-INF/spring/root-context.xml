@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
 	<tx:annotation-driven/>
 	
-	<jpa:repositories base-package="com.javateam.springBoard.repository" /> 
+	<jpa:repositories base-package="com.javateam.service.jparepository" /> 
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
     <bean id="dataSource"
@@ -71,9 +71,9 @@
    	</bean>  -->
    	
    	<!-- Spring/JPA --> 
-   	<jpa:repositories base-package="com.javateam.service.jparepository" /> 
+   	<jpa:repositories base-package="com.javateam.springBoard.repository" /> 
    	
-   	<bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" 
+   	<bean class="org.springframework.orm.jpa.JpaTransactionManager" 
    		  id="transactionManager"> 
    		  
   		<property name="entityManagerFactory" ref="entityManagerFactory" /> 
@@ -86,7 +86,7 @@
 		  class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
 		
 		<property name="dataSource" ref="dataSource" /> 
-		<property name="packagesToScan" value="com.javateam.springBoard.domain.vo"/> 
+		<property name="packagesToScan" value="com.javateam.model.jpavo"/> 
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"> 
 				<property name="generateDdl" value="true" /> 

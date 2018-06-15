@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.javateam</groupId>
 	<artifactId>shoping_project</artifactId>
-	<name>spring_security_sample1</name>
+	<name>shoping_project</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -167,6 +167,13 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 		
+		<!-- spring data JPA -->
+		<dependency>
+		  <groupId>org.springframework.data</groupId>
+		  <artifactId>spring-data-jpa</artifactId>
+		  <version>2.0.7.RELEASE</version>
+		</dependency>
+		
 		<!-- JPA -->
 		<dependency>
 		    <groupId>org.hibernate.javax.persistence</groupId>
@@ -238,8 +245,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.5.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
                     <compilerArgument>-Xlint:all</compilerArgument>
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>
