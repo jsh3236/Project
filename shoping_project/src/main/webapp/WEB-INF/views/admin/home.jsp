@@ -7,7 +7,8 @@
 <title>Secured Admin Home</title>
 </head>
 <body>
-<h3>Hello World!</h3>
-<h4>관리자 ${username},  ${message}</h4>
+	<jsp:include page="../include.jsp" flush="false" />
+	<h3>Hello World!</h3>
+	<h4>관리자 ${username},  ${message}</h4>
 </body>
 </html>

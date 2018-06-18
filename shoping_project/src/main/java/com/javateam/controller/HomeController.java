@@ -17,6 +17,18 @@ public class HomeController {
 	@Autowired
 	AuthJdbcService authJdbcService;
 
+	@RequestMapping("/")
+	public String home() {
+		
+		return "home";
+	}
+	
+	@RequestMapping("/user/myPage")
+	public String myPage() {
+		
+		return "user/myPage";
+	}
+	
 	@RequestMapping("/welcome")
 	public void welcome() {
 	}
@@ -25,8 +37,20 @@ public class HomeController {
 	public void join() {
 	}
 	
-	@RequestMapping("/myPage")
-	public void myPage() {
+	@RequestMapping("/board/mouseBoard")
+	public void mouserBoard() {
+	}
+	
+	@RequestMapping("/board/keyBoard")
+	public void keyBoard() {
+	}
+	
+	@RequestMapping("/board/headBoard")
+	public void headBoard() {
+	}
+	
+	@RequestMapping("/board/monitorBoard")
+	public void monitorBoard() {
 	}
 	
 	@RequestMapping("/joinAction")

@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.javateam.service.jparepository;
+package com.javateam.service.deprecated;
 
 import java.util.List;
 
-import com.javateam.model.jpavo.BoardVO;
+import com.javateam.model.vo.BoardVO;
 
 
 /**

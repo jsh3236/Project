@@ -4,7 +4,7 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
@@ -12,7 +12,7 @@
 	<tx:annotation-driven/>
 	
 	
-	<jpa:repositories base-package="com.javateam.service.jparepository" /> 
+	<jpa:repositories base-package="com.javateam.service.deprecated" /> 
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
     <bean id="dataSource"
@@ -72,7 +72,7 @@
    	</bean>  -->
    	
    	<!-- Spring/JPA --> 
-   	<jpa:repositories base-package="com.javateam.springBoard.repository" /> 
+   	<jpa:repositories base-package="com.javateam.service.deprecated" /> 
    	
    	<bean class="org.springframework.orm.jpa.JpaTransactionManager" 
    		  id="transactionManager"> 
@@ -87,7 +87,7 @@
 		  class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
 		
 		<property name="dataSource" ref="dataSource" /> 
-		<property name="packagesToScan" value="com.javateam.model.jpavo"/> 
+		<property name="packagesToScan" value="com.javateam.model.vo"/> 
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"> 
 				<property name="generateDdl" value="true" /> 

@@ -3,7 +3,7 @@
  * 
  */
 
-package com.javateam.model.jpavo;
+package com.javateam.model.vo;
 
 import java.sql.Date;
 
@@ -50,19 +50,19 @@ import lombok.Data;
 				,resultSetMapping = "insertOrUpdateResult"
 			)
 })*/
+/*@SequenceGenerator(
+	    name = "BOARD_SEQ_GENERATOR", 
+	    sequenceName = "BOARD_SEQ", //매핑할데이터베이스 시퀀스 이름
+	    initialValue = 1, allocationSize = 1)*/
 public class BoardVO {
 	
 	@Id
 	@Column(name="board_num")
 	@GeneratedValue(strategy = GenerationType.AUTO) 
+/*	@GeneratedValue(strategy = GenerationType.SEQUENCE,
+    generator = "BOARD_SEQ_GENERATOR") */
 	// hibernate_sequence.nextval
 	private int boardNum; // 글 번호
-	
-	@Column(name="board_name")
-	private String boardName; // 글 작성자
-	
-	@Column(name="board_pass")
-	private String boardPass; // 글 비밀번호
 	
 	@Column(name="board_subject")
 	private String boardSubject; // 글 제목

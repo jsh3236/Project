@@ -8,11 +8,12 @@
 <title>myPage</title>
 </head>
 <body>
-<h1>My Page</h1><br><br>
-<input type="button" 
-	   value="뒤로가기"
-	   style="margin-left: 50px"
-	   onclick="history.back()" />
+	<div><jsp:include page="../include.jsp" flush="false" /></div>
+	<h1>My Page</h1><br><br>
+	<input type="button" 
+		   value="뒤로가기"
+		   style="margin-left: 50px"
+		   onclick="history.back()" />
 
 </body>
 </html>

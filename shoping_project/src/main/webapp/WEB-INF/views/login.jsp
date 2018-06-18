@@ -48,36 +48,36 @@
 	$(document).ready(function() {
 		
 		 // 필드 공백 제거
-		 $("#j_username").val().replace(/\s/g, "");
-		 $("#j_password").val().replace(/\s/g, "");
+		 $("#username").val().replace(/\s/g, "");
+		 $("#password").val().replace(/\s/g, "");
 		 
 		 $("#login").click(function() {
 			
 			// 공백 여부 점검
-			if ($.trim($("#j_username").val()) == "" || 
-				$.trim($("#j_password").val()) == "")   {
+			if ($.trim($("#username").val()) == "" || 
+				$.trim($("#password").val()) == "")   {
 				
 				alert("공백이 입력되었습니다. 다시 입력하십시오.");
-				$("#j_username").val("");
-				$("#j_password").val("");
+				$("#username").val("");
+				$("#password").val("");
 				
 			} else {
 				
 				$.ajax({
-		    		url : "${pageContext.request.contextPath}/login/idCheck",
+		    		url : "${pageContext.request.contextPath}/idCheck",
 		    	    type: "get",
 		    	    dataType: "text",
 		        	data : {
-		        		username : $("#j_username").val()
+		        		username : $("#username").val()
 		        	},
 		        	success : function(data) {
 		        		
 		        		if (data.trim() == "true") {
-			           		 alert("아이디가 존재합니다.");
+			           		 alert("로그인에 성공하셨습니다.");
 			       			 document.loginForm.submit();
 			           	} else 
 			       			 alert("아이디가 존재하지 않습니다."); 
-		        			 $("#j_username").focus();
+		        			 $("#username").focus();
 			        	}
 		        	
 		    	}); // $.ajax
@@ -107,16 +107,19 @@
 				<tr>
 					<td>ID : </td>
 					<td><input type="text" 
-							   id = "j_username"	
-							   name="j_username" />
+							   id = "username"	
+							   name="username" />
 					</td>
 				</tr>
 				<tr>
 					<td>PW : </td>
 					<td><input type="password" 
-							   id="j_password"
-							   name="j_password" />
+							   id="password"
+							   name="password" />
 					</td>
+<!-- 					<td>
+						<input id = "remember_me" name ="_spring_security_remember_me" type = "checkbox"/>Remember me
+					</td> -->
 				</tr>
 				<tr>
 					<td colspan="2" align="center">

@@ -30,33 +30,7 @@
 
 </head>
 <body>
-<h1>
-	<header>
-		<div class="wrapper">
-			<h1><a href="#">Computer</a></h1>
-			<nav>
-				<ul class="menu">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Board</a></li>
-					<li><a href="#">Reference</a></li>
-					<li><a href="#">Contact</a></li>
-					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-					<li><a href="${pageContext.request.contextPath}/login">login</a></li>
-					<li><a style="padding-right: 30px"href="${pageContext.request.contextPath}/join">join</a></li>
-				</ul>			
-			</nav>
-		</div>
-	</header>
-</h1>
-
-<table>
-	<tr>
-		<td colspan="3">키보드</td>
-		<td>
-	</tr>
-</table>
-
+	<jsp:include page="include.jsp" flush="false" />
 
 </body>
 </html>

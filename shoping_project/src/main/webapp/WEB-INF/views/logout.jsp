@@ -17,8 +17,8 @@ ${pageContext.request.userPrincipal.name}<br>
 </c:if>
 
 <script>
-	alert("로그인 페이지로 이동합니다.");
-	location.href="login";
+	alert("홈으로 이동합니다..");
+	location.href="home";
 </script>
 	
 </body>

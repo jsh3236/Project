@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.javateam.service.jparepository;
+package com.javateam.service.deprecated;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
-import com.javateam.model.jpavo.BoardVO;
+import com.javateam.model.vo.BoardVO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -39,7 +39,7 @@ public class JpaDAOImpl implements JpaDAO {
     private JpaTransactionManager transactionManager;
    
     /**
-	 * @see com.javateam.springBoard.repository.JpaDAO#insert(com.javateam.springBoard.domain.vo.BoardVO)
+	 * @see com.javateam.service.deprecated.springBoard.repository.JpaDAO#insert(com.javateam.model.vo.springBoard.domain.vo.BoardVO)
 	 */
     @Override
 	public void insert(BoardVO board) {
@@ -57,17 +57,15 @@ public class JpaDAOImpl implements JpaDAO {
 			// native query
 			Query query = entityManager.createNativeQuery("INSERT INTO board_tbl VALUES "
 										  				  + "(hibernate_sequence.nextval,"
-										  				  + "?,?,?,?,?,?,?,?,?,?)");
+										  				  + "?,?,?,?,?,?,?,?)");
 			query.setParameter(1, board.getBoardContent())
 				 .setParameter(2, board.getBoardDate())
 				 .setParameter(3, board.getBoardFile())
-				 .setParameter(4, board.getBoardName())
-				 .setParameter(5, board.getBoardPass())
-				 .setParameter(6, board.getBoardReLev())
-				 .setParameter(7, board.getBoardReRef())
-				 .setParameter(8, board.getBoardReSeq())
-				 .setParameter(9,board.getBoardReadCount())
-				 .setParameter(10,board.getBoardSubject());
+				 .setParameter(4, board.getBoardReLev())
+				 .setParameter(5, board.getBoardReRef())
+				 .setParameter(6, board.getBoardReSeq())
+				 .setParameter(7,board.getBoardReadCount())
+				 .setParameter(8,board.getBoardSubject());
 			
 			log.info("저장 성공 ? {}", query.executeUpdate()==1 ? true : false);
 			
@@ -93,7 +91,7 @@ public class JpaDAOImpl implements JpaDAO {
 	} //
 
 	/**
-	 * @see com.javateam.springBoard.repository.JpaDAO#list()
+	 * @see com.javateam.service.deprecated.springBoard.repository.JpaDAO#list()
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -115,7 +113,7 @@ public class JpaDAOImpl implements JpaDAO {
 	} //
 	
     /**
-	 * @see com.javateam.springBoard.repository.JpaDAO#update(com.javateam.springBoard.domain.vo.BoardVO)
+	 * @see com.javateam.service.deprecated.springBoard.repository.JpaDAO#update(com.javateam.model.vo.springBoard.domain.vo.BoardVO)
 	 */
 	@Override
 	public void update(BoardVO board) {
@@ -137,7 +135,7 @@ public class JpaDAOImpl implements JpaDAO {
 	} //
 	
     /**
-	 * @see com.javateam.springBoard.repository.JpaDAO#delete(int)
+	 * @see com.javateam.service.deprecated.springBoard.repository.JpaDAO#delete(int)
 	 */
 	@Override
 	public boolean delete(int boardNum) {

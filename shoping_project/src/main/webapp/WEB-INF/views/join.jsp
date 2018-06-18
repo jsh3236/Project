@@ -229,7 +229,7 @@ font {
 						   ng-pattern="/^[a-zA-Z]{1}\w{5,19}$/" 
 						   ng-required="true"> &nbsp;
 
-					<input type="button" value="중복 확인"><br> 
+					<input type="button" value="중복 확인" onclick="${pageContext.request.contextPath}/login/idCheck"><br> 
 					<font size="2">
 						[아이디 중복 확인 결과 표기]
 					</font>
